@@ -1,0 +1,75 @@
+#!/bin/bash
+#
+# This script is executed whenever your appliance boots.  Here you can add
+# commands to be executed before the system enters the first runlevel.  This
+# could include loading kernel modules, starting daemons that aren't managed
+# by init files, asking questions at the console, etc.
+#
+# The 'kiwi_type' variable will contain the format of the appliance (oem =
+# disk image, vmx = VMware, iso = CD/DVD, xen = Xen).
+#
+
+# read in some variables
+. /studio/profile
+
+if [ -f /etc/init.d/suse_studio_firstboot ]
+then
+
+  # Put commands to be run on the first boot of your appliance here
+  echo "Running SUSE Studio first boot script..."
+  
+### Appliance settings
+DEFUSER="hcc"
+LOG=/root/firstboot.log
+echo $0 >> $LOG
+
+### Firefox settings
+if [ -f /usr/lib64/firefox/browser/defaults/preferences/firefox-openSUSE.js ]
+then
+  echo 'pref("browser.startup.homepage","https://hcc.nl | http://lizards.opensuse.org/ | http://planet.opensuse.org")' >> \
+  /usr/lib64/firefox/browser/defaults/preferences/firefox-openSUSE.js
+  [ $? -eq 0 ] && echo "Firefox settings: OK" >> $LOG || echo "Firefox settings: Failed" >> $LOG
+fi
+
+### KDE4 settings
+KDECONF="/home/$DEFUSER/.kde4/share/config/"
+[ -d "$KDECONF" ] || mkdir -p "$KDECONF"
+cat <<EOF > "$KDECONF"/kickoffrc
+[Favorites]
+FavoriteURLs=/usr/share/applications/kde4/dolphin.desktop,/usr/share/applications/kde4/systemsettings.desktop,/usr/share/applications/firefox.desktop,/usr/share/applications/google-chrome.desktop,/usr/share/applications/writer.desktop,/usr/share/applications/kde4/Help.desktop,/usr/share/applications/skype.desktop,/usr/share/applications/thunderbird.desktop,/usr/share/applications/vlc.desktop
+[KRunner]
+loadAll=false
+[KRunner][PlasmaRunnerManager]
+pluginWhiteList=places,shell,services,bookmarks,recentdocuments,locations
+EOF
+
+### Copy a few application shortcuts to the Desktop folder
+FILES="
+skype
+google-chrome
+thunderbird
+vlc
+"
+DDIR="/home/$DEFUSER/Desktop"
+[ -d "$DDIR" ] || mkdir -p "$DDIR"
+for f in $FILES
+do
+    cp /usr/share/applications/$f.desktop "$DDIR/"
+    chmod a+x "$DDIR/$f"    # prevent error message when launching the 1st time
+done
+
+### correct file ownership
+chown -R "$DEFUSER" "/home/$DEFUSER"
+
+### Set language for root to default user language
+sed -i 's/ROOT_USES_LANG=.*$/ROOT_USES_LANG="yes"/g' /etc/sysconfig/language
+
+### Set LXDM as default display manager
+sed -i 's/DISPLAYMANAGER=.*$/DISPLAYMANAGER="lxdm"/g' /etc/sysconfig/displaymanager
+### Set XFCE as default display manager
+sed -i 's/DEFAULT_WM=.*$/DEFAULT_WM="xfce"/g' /etc/sysconfig/windowmanager
+
+
+
+
+fi

@@ -1,0 +1,7 @@
+[openSUSE_13.1_Updates_non-OSS]
+name=openSUSE_13.1_Updates_non-OSS
+baseurl=http://download.opensuse.org/update/13.1-non-oss/
+type=rpm-md
+enabled=1
+autorefresh=1
+gpgcheck=1

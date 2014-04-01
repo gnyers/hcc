@@ -1,0 +1,7 @@
+[packman_opensuse_13.1]
+name=packman_opensuse_13.1
+baseurl=http://packman.inode.at/suse/openSUSE_13.1/
+type=rpm-md
+enabled=1
+autorefresh=1
+gpgcheck=1

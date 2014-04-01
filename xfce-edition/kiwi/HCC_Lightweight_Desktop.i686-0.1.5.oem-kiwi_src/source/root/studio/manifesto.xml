@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <studio_uuid>8466bd24-fd59-11df-9f90-475ae2f5345b</studio_uuid>
+  <appliance_uuid>3bd13de6-b5a2-11e3-da8d-a31de2e61522</appliance_uuid>
+  <config>
+    <image name="HCC_Lightweight_Desktop" displayname="HCC_Lightweight_Desktop" schemaversion="5.2">
+      <description type="system">
+        <author>Gábor Nyers</author>
+        <contact>studio-devel@suse.de</contact>
+        <specification>openSUSE 13.1 KDE 4</specification>
+      </description>
+      <preferences>
+        <type checkprebuilt="true" boot="oemboot/suse-13.1" fsnocheck="true" filesystem="ext3" bootloader="grub2" kernelcmdline="quiet" image="oem">
+          <oemconfig>
+            <oem-swap>true</oem-swap>
+            <oem-swapsize>512</oem-swapsize>
+            <oem-boot-title>HCC Lightweight Desktop</oem-boot-title>
+          </oemconfig>
+        </type>
+        <version>0.1.5</version>
+        <packagemanager>ensconce</packagemanager>
+        <rpm-check-signatures>false</rpm-check-signatures>
+        <rpm-force>false</rpm-force>
+        <boot-theme>studio</boot-theme>
+        <timezone>Europe/Amsterdam</timezone>
+        <hwclock>localtime</hwclock>
+        <locale>nl_NL</locale>
+      </preferences>
+      <users group="users">
+        <user name="hcc" pwd="$1$VTbTupYd$GbCikDpnld.Nf2caN6Bp61" home="/home/hcc" shell="/bin/bash"/>
+      </users>
+      <users group="root">
+        <user name="root" pwd="$1$6SstveS7$KzpT2QmTkQfgkbOO8yGha/" home="/root" shell="/bin/bash"/>
+      </users>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/update/13.1/"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/update/13.1-non-oss/"/>
+      </repository>
+      <repository type="yast2">
+        <source path="http://download.opensuse.org/distribution/13.1/repo/non-oss/"/>
+      </repository>
+      <repository type="yast2">
+        <source path="http://download.opensuse.org/distribution/13.1/repo/oss/"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://packman.inode.at/suse/openSUSE_13.1/"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://susestudio.com/user_repos/eHe01J1UADbuv7DVGUeP/"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://susestudio.com/image_repos/VAfjgYUkgQbp8PY2puzJ/"/>
+      </repository>
+      <packages type="image" patternType="onlyRequired">
+        <opensusePattern name="lxde"/>
+        <opensusePattern name="xfce"/>
+        <opensusePattern name="base"/>
+        <opensusePattern name="x11"/>
+        <package name="vlc-noX-lang"/>
+        <package name="vlc-gnome"/>
+        <package name="NetworkManager-gnome-lang"/>
+        <package name="NetworkManager-openvpn"/>
+        <package name="NetworkManager-gnome"/>
+        <package name="lxdm"/>
+        <package name="plasmoid-networkmanagement"/>
+        <package name="patterns-openSUSE-lxde"/>
+        <package name="patterns-openSUSE-lxde_office"/>
+        <package name="xfce4-volumed"/>
+        <package name="xfce4-dict"/>
+        <package name="xfce4-panel-plugin-netload"/>
+        <package name="xfce4-panel-plugin-sensors"/>
+        <package name="xfce4-session"/>
+        <package name="xfce4-panel-plugin-systemload"/>
+        <package name="xfce4-panel-plugin-cpufreq"/>
+        <package name="xfce4-panel-plugin-datetime"/>
+        <package name="xfce4-panel-plugin-cpugraph"/>
+        <package name="xfce4-panel-plugin-quicklauncher"/>
+        <package name="xfce4-settings"/>
+        <package name="xfce4-power-manager"/>
+        <package name="xfce4-panel-plugin-battery"/>
+        <package name="xfce4-panel-plugin-mount"/>
+        <package name="gtk-xfce-engine"/>
+        <package name="xfce4-appfinder"/>
+        <package name="xfce4-taskmanager"/>
+        <package name="xfce4-mixer"/>
+        <package name="flash-player"/>
+        <package name="vlc-codecs"/>
+        <package name="vlc"/>
+        <package name="b43legacy-firmware"/>
+        <package name="b43-firmware"/>
+        <package name="firmwarekit"/>
+        <package name="adaptec-firmware"/>
+        <package name="atmel-firmware"/>
+        <package name="FirmwareUpdateKit"/>
+        <package name="bluez-firmware"/>
+        <package name="ipw-firmware"/>
+        <package name="alsa-firmware"/>
+        <package name="kernel-firmware"/>
+        <package name="strace"/>
+        <package name="lsof"/>
+        <package name="lxcc"/>
+        <package name="libyui-qt-graph5"/>
+        <package name="libyui-qt5"/>
+        <package name="fetchmsttfonts"/>
+        <package name="soprano-backend-virtuoso"/>
+        <package name="yast2-control-center-qt"/>
+        <package name="SuSEfirewall2"/>
+        <package name="grub2"/>
+        <package name="glibc-locale"/>
+        <package name="iputils"/>
+        <package name="kernel-default"/>
+        <package name="less"/>
+        <package name="plymouth"/>
+        <package name="syslog-ng"/>
+        <package name="vim"/>
+        <package name="yast2"/>
+        <package name="yast2-firstboot"/>
+        <package name="zypper"/>
+        <package name="dbus-1-x11"/>
+        <package name="icewm"/>
+        <package name="x11-tools"/>
+        <package name="xf86-video-modesetting"/>
+        <package name="xorg-x11"/>
+        <package name="xorg-x11-driver-input"/>
+        <package name="xorg-x11-driver-video"/>
+        <package name="xorg-x11-fonts"/>
+        <package name="xorg-x11-server"/>
+        <package name="yast2-branding-openSUSE"/>
+        <package name="yast2-theme-openSUSE"/>
+        <package name="yast2-x11"/>
+        <package name="grub"/>
+        <package name="lxmusic-lang"/>
+        <package name="lxpolkit"/>
+        <package name="lxshortcut"/>
+        <package name="lxinput"/>
+        <package name="lxtask"/>
+        <package name="lxmenu-data"/>
+        <package name="lxmusic"/>
+        <package name="lxterminal"/>
+        <package name="lxsession-edit"/>
+        <package name="lxsession"/>
+        <package name="lxrandr"/>
+        <package name="lxlauncher"/>
+        <package name="lxpanel-lang"/>
+        <package name="lxpanel"/>
+        <package name="lxappearance-lang"/>
+        <package name="lxappearance"/>
+        <package name="yast2-qt-branding-openSUSE"/>
+        <package name="yast2-theme-openSUSE-Oxygen"/>
+        <package name="yast2-live-installer"/>
+        <package name="yast2-samba-client"/>
+        <package name="yast2-add-on"/>
+        <package name="grub2-branding-openSUSE"/>
+        <package name="gfxboot-branding-openSUSE"/>
+        <package name="lxde-common-branding-openSUSE"/>
+        <package name="ghostscript-fonts"/>
+        <package name="yast2-restore"/>
+        <package name="yast2-backup"/>
+        <package name="udev-configure-printer"/>
+        <package name="yast2-printer"/>
+        <package name="yast2-firewall"/>
+        <package name="yast2-sudo"/>
+        <package name="sudo"/>
+        <package name="aspell-en"/>
+        <package name="ispell"/>
+        <package name="ispell-american"/>
+        <package name="ispell-dutch"/>
+        <package name="myspell-american"/>
+        <package name="myspell-dutch"/>
+        <package name="translation-update-nl"/>
+        <package name="bundle-lang-common-nl"/>
+        <package name="NetworkManager-lang"/>
+        <package name="libreoffice-branding-openSUSE"/>
+        <package name="libreoffice-impress-extensions"/>
+        <package name="libreoffice-calc-extensions"/>
+        <package name="libreoffice-writer-extensions"/>
+        <package name="libreoffice-draw"/>
+        <package name="libreoffice-impress"/>
+        <package name="libreoffice-calc"/>
+        <package name="aspell-nl"/>
+        <package name="yast2-trans-nl"/>
+        <package name="libreoffice-help-nl"/>
+        <package name="libreoffice-languagetool-nl"/>
+        <package name="libreoffice-l10n-nl"/>
+        <package name="pullin-flash-player"/>
+        <package name="MozillaThunderbird-translations-common"/>
+        <package name="MozillaThunderbird"/>
+        <package name="google-chrome-stable"/>
+        <package name="mhtml-firefox"/>
+        <package name="MozillaFirefox-branding-openSUSE"/>
+        <package name="MozillaFirefox-translations-common"/>
+        <package name="patterns-openSUSE-lxde_laptop"/>
+        <package name="lxde-common"/>
+        <package name="skype"/>
+        <package name="liberation-fonts"/>
+        <package name="free-ttf-fonts"/>
+        <archive name="plymouth.tar" bootinclude="true"/>
+        <archive name="xdm.tar"/>
+      </packages>
+      <packages type="bootstrap">
+        <package name="filesystem"/>
+        <package name="glibc-locale"/>
+        <package name="module-init-tools"/>
+      </packages>
+    </image>
+  </config>
+  <extra_config name="HCC_Lightweight_Desktop">
+    <appliance_id>1156923</appliance_id>
+    <arch>i686</arch>
+    <version>0.1.5</version>
+    <logo>1a/0c637879d948eaa2f5d512980d3009</logo>
+    <background>61/5f185505405d47bc5a5f3e7ceaafdb</background>
+    <base_system>13.1</base_system>
+    <image_type>oem</image_type>
+    <time_zone>Europe/Amsterdam</time_zone>
+    <region>Europe</region>
+    <default_runlevel>5</default_runlevel>
+    <install_recommended>false</install_recommended>
+    <xen_host>false</xen_host>
+    <exclude_docs>false</exclude_docs>
+    <disable_branding>false</disable_branding>
+    <template>openSUSE 13.1, KDE 4 desktop</template>
+    <locale>
+      <language>nl_NL.UTF-8</language>
+      <keytable>us.map.gz</keytable>
+    </locale>
+    <estimated_size>3050</estimated_size>
+    <size_offset>0</size_offset>
+    <non_interactive>false</non_interactive>
+    <oem_disk_size>16G</oem_disk_size>
+    <check_supportability>false</check_supportability>
+    <repository type="rpm-md">
+      <source path="http://download.opensuse.org/update/13.1/" internal="false"/>
+      <name>openSUSE 13.1 Updates</name>
+    </repository>
+    <repository type="rpm-md">
+      <source path="http://download.opensuse.org/update/13.1-non-oss/" internal="false"/>
+      <name>openSUSE 13.1 Updates non-OSS</name>
+    </repository>
+    <repository type="yast2">
+      <source path="http://download.opensuse.org/distribution/13.1/repo/non-oss/" internal="false"/>
+      <name>openSUSE 13.1 non-OSS</name>
+    </repository>
+    <repository type="yast2">
+      <source path="http://download.opensuse.org/distribution/13.1/repo/oss/" internal="false"/>
+      <name>openSUSE 13.1 OSS</name>
+    </repository>
+    <repository type="rpm-md">
+      <source path="http://packman.inode.at/suse/openSUSE_13.1/" internal="false"/>
+      <name>packman opensuse 13.1</name>
+    </repository>
+    <network config="network_manager">
+    </network>
+    <startup_programs>
+    </startup_programs>
+    <overlay_files remove="">
+      <file name="firefox-add-ons.zip" path="/home/" owner="nobody" group="nobody" perms="644" type="archive" md5="e424c142c7359675f386342b192d6e03" extract_archive="true"/>
+      <file name="SUSEgreeter-hcc.tar.gz" path="/" owner="nobody" group="nobody" perms="644" type="archive" md5="efc6b7dbee121c968dfc25afc64a2a9b" extract_archive="true"/>
+    </overlay_files>
+    <firewall>
+      <firewall_enabled>yes</firewall_enabled>
+      <firewall_ssh>opened</firewall_ssh>
+      <firewall_http>closed</firewall_http>
+      <firewall_webyast>closed</firewall_webyast>
+    </firewall>
+    <webyast enabled="false" version="">
+    </webyast>
+    <x_keyboard model="microsoftpro" layout="us" variant="" keycode="xfree86" LA="" RA="" SL="" RC="" OPT=""/>
+    <build_script>
+      <![CDATA[#!/bin/bash -e
+#
+# This script is executed at the end of appliance creation.  Here you can do
+# one-time actions to modify your appliance before it is ever used, like
+# removing files and directories to make it smaller, creating symlinks,
+# generating indexes, etc.
+#
+# The 'kiwi_type' variable will contain the format of the appliance
+# (oem = disk image, vmx = VMware, iso = CD/DVD, xen = Xen).
+#
+
+# read in some variables
+. /studio/profile
+
+# read in KIWI utility functions
+. /.kconfig
+
+# set hostname
+echo hccdesktop > /etc/HOSTNAME]]>
+    </build_script>
+    <boot_script>
+      <![CDATA[#!/bin/bash
+#
+# This script is executed whenever your appliance boots.  Here you can add
+# commands to be executed before the system enters the first runlevel.  This
+# could include loading kernel modules, starting daemons that aren't managed
+# by init files, asking questions at the console, etc.
+#
+# The 'kiwi_type' variable will contain the format of the appliance (oem =
+# disk image, vmx = VMware, iso = CD/DVD, xen = Xen).
+#
+
+# read in some variables
+. /studio/profile
+
+if [ -f /etc/init.d/suse_studio_firstboot ]
+then
+
+  # Put commands to be run on the first boot of your appliance here
+  echo "Running SUSE Studio first boot script..."
+  
+### Appliance settings
+DEFUSER="hcc"
+LOG=/root/firstboot.log
+echo $0 >> $LOG
+
+### Firefox settings
+if [ -f /usr/lib64/firefox/browser/defaults/preferences/firefox-openSUSE.js ]
+then
+  echo 'pref("browser.startup.homepage","https://hcc.nl | http://lizards.opensuse.org/ | http://planet.opensuse.org")' >> \
+  /usr/lib64/firefox/browser/defaults/preferences/firefox-openSUSE.js
+  [ $? -eq 0 ] && echo "Firefox settings: OK" >> $LOG || echo "Firefox settings: Failed" >> $LOG
+fi
+
+### KDE4 settings
+KDECONF="/home/$DEFUSER/.kde4/share/config/"
+[ -d "$KDECONF" ] || mkdir -p "$KDECONF"
+cat <<EOF > "$KDECONF"/kickoffrc
+[Favorites]
+FavoriteURLs=/usr/share/applications/kde4/dolphin.desktop,/usr/share/applications/kde4/systemsettings.desktop,/usr/share/applications/firefox.desktop,/usr/share/applications/google-chrome.desktop,/usr/share/applications/writer.desktop,/usr/share/applications/kde4/Help.desktop,/usr/share/applications/skype.desktop,/usr/share/applications/thunderbird.desktop,/usr/share/applications/vlc.desktop
+[KRunner]
+loadAll=false
+[KRunner][PlasmaRunnerManager]
+pluginWhiteList=places,shell,services,bookmarks,recentdocuments,locations
+EOF
+
+### Copy a few application shortcuts to the Desktop folder
+FILES="
+skype
+google-chrome
+thunderbird
+vlc
+"
+DDIR="/home/$DEFUSER/Desktop"
+[ -d "$DDIR" ] || mkdir -p "$DDIR"
+for f in $FILES
+do
+    cp /usr/share/applications/$f.desktop "$DDIR/"
+    chmod a+x "$DDIR/$f"    # prevent error message when launching the 1st time
+done
+
+### correct file ownership
+chown -R "$DEFUSER" "/home/$DEFUSER"
+
+### Set language for root to default user language
+sed -i 's/ROOT_USES_LANG=.*$/ROOT_USES_LANG="yes"/g' /etc/sysconfig/language
+
+### Set LXDM as default display manager
+sed -i 's/DISPLAYMANAGER=.*$/DISPLAYMANAGER="lxdm"/g' /etc/sysconfig/displaymanager
+### Set XFCE as default display manager
+sed -i 's/DEFAULT_WM=.*$/DEFAULT_WM="xfce"/g' /etc/sysconfig/windowmanager
+
+
+
+
+fi]]>
+    </boot_script>
+    <enable_root_firstboot>false</enable_root_firstboot>
+    <window_manager>icewm-session</window_manager>
+    <display_manager>xdm</display_manager>
+  </extra_config>
+</manifest>
